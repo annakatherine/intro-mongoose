@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
 //require model
 var User = require('../models/user');
 
@@ -67,3 +66,10 @@ var server = app.listen(3000, function() {
   var port = server.address().port;
   console.log('Listening on port ', port);
 });
+//require routes
+var millie = require('../routes/millie');
+var general = require('../routes/general');
+
+//use routes
+app.use('/millie', millie );
+app.use('/general', general ); 
